@@ -1,0 +1,14 @@
+<svg class="sidebar-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+    <defs>
+        <path id="wavepath" d="M2000 0 500 0 Q 452 150 500 300 t 0 300 0 300 0 300 0 300 0 300 v1000 z" />
+        <path id="motionpath" d="M 0 -600 0 0" />
+    </defs>
+    <g>
+        <use xlink:href="#wavepath" x="75" fill="#ffffff">
+            <animateMotion dur="3s" repeatCount="indefinite">
+                <mpath xlink:href="#motionpath" />
+            </animateMotion>
+        </use>
+    </g>
+</svg>
+<div class="bodyContainer">main body works</div>
