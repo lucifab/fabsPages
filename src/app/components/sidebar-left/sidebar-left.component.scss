@@ -2,7 +2,24 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 h1, h2{
     color: blanchedalmond;
+}
+h1{
+    font-family:'PlayfairItalic';
+    font-weight: 900;
+    margin-bottom: 0;
+}
+h2{
+    font-family:'Oswald', sans-serif;
+    font-weight: 200;
+    margin-top:5px;
+}
+#particles{
+    z-index: -1;
+}
+#iconImage{
+    width: 6vw;
 }

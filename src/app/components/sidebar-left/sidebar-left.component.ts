@@ -10,35 +10,54 @@ import { loadFull } from "tsparticles";
 export class SidebarLeftComponent {
 
   particlesOptions = {
-    fpsLimit: 60,
+   
+    fpsLimit: 120,
     particles: {
-      color: {
-        value: "#000"
-      },
-      links: {
-        enable: false
-      },
-      opacity: {
-        value: 0.9
-      },
-      shape: {
-        type: "star"
-      },
-      size: {
-        value: 1
-      },
-      move: {
-        enable: true
-      }
-    }
-  };
+        color: {
+            value: "#ffffff",
+        },
+        links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: false,
+            opacity: 0.5,
+            width: 1,
+        },
+        collisions: {
+            enable: false,
+        },
+        move: {
+            direction: MoveDirection.none,
+            enable: true,
+            outModes: {
+                default: OutMode.bounce,
+            },
+            random: false,
+            speed: 1,
+            straight: false,
+        },
+        number: {
+            density: {
+                enable: true,
+                area: 800,
+            },
+            value: 80,
+        },
+        opacity: {
+            value: 0.4,
+        },
+        shape: {
+            type: "circle",
+        },
+        size: {
+            value: { min: 1, max: 3 },
+        },
+    },
+    detectRetina: true,
+};
 
-  particlesLoaded(container: Container): void {
-    console.log(container);
-}
 
 async particlesInit(engine: Engine): Promise<void> {
-    console.log("particles initiated");
 
     // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready

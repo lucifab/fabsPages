@@ -1,8 +1,9 @@
 .bodyContainer{
-    padding:10px;
+    padding:3vw;
     background-color: #ffffff;
     display: flex;
     flex-grow: 1;
+    overflow-y: scroll;
 }
 .sidebar-wave{
     height: 100%;
