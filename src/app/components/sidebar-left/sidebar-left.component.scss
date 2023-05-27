@@ -3,9 +3,11 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 h1, h2{
     color: blanchedalmond;
+    text-align: center;
 }
 h1{
     font-family:'PlayfairItalic';
@@ -16,6 +18,7 @@ h2{
     font-family:'Oswald', sans-serif;
     font-weight: 200;
     margin-top:5px;
+    font-size:large;
 }
 #particles{
     z-index: -1;

@@ -1,11 +1,28 @@
-.bodyContainer{
-    padding:3vw;
+.bodyContainer {
+    padding: 3vw;
     background-color: #ffffff;
-    display: flex;
-    flex-grow: 1;
-    overflow-y: scroll;
+    display: block;
+    overflow-y: auto;
+    scrollbar-color: lightgrey transparent;
+    scrollbar-width:thin;
 }
-.sidebar-wave{
+
+.sidebar-wave {
     height: 100%;
-    width: 75px;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.bodyContainer::-webkit-scrollbar-track {
+    background-color: #ffffff;
+
+}
+
+.bodyContainer::-webkit-scrollbar {
+    width: 12px;
+    background-color: #ffffff;
+}
+
+.bodyContainer::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
 }
