@@ -1,0 +1,23 @@
+.button{
+    //Style
+    background-color: white;
+    height: 10vh;
+    width: 10vh;
+    padding:5px;
+    border-radius: 1em;
+
+    // Display
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    justify-content: center;
+    align-items: center;
+
+    // Font
+    text-transform: uppercase;
+    font-family: 'SourceSansProBlack';
+
+    fa-icon{
+        font-size: 25px;
+    }
+}

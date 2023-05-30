@@ -1,0 +1,22 @@
+h1{
+    font-family: 'Playfair', sans-serif ;
+    text-align: right;
+    margin-bottom: 0;
+}
+#articleDate{
+    text-align: right;
+}
+#header{
+    margin: 36px 0 35px 0;
+    img{
+        float:left;
+        height: 60px;
+        border-left: 10px solid coral;
+    }
+}
+.articleBody{
+    font-family: 'SourceSansPro';
+    font-size: large;
+    text-align: justify;
+    line-height: 30px;
+}

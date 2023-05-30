@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from "tsparticles-engine";
+import { MoveDirection, OutMode, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { faLinkedin, faGithub, faTumblr } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-sidebar-left',
@@ -9,6 +11,12 @@ import { loadFull } from "tsparticles";
 })
 export class SidebarLeftComponent {
 
+  // Icons
+  faLinkedin = faLinkedin;
+  faGithub = faGithub;
+  faTumblr = faTumblr;
+
+  //Particle Effects
   particlesOptions = {
    
     fpsLimit: 120,

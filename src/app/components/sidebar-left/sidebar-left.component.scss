@@ -20,6 +20,22 @@ h2{
     margin-top:5px;
     font-size:large;
 }
+.linkContainer{
+    color: blanchedalmond;
+    display: flex;
+    gap: 10px;
+
+    a{
+        color: blanchedalmond;
+        font-size: 18px;
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    a:hover{
+        color:goldenrod;
+    }
+    
+}
+
 #particles{
     z-index: -1;
 }
