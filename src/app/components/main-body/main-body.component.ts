@@ -17,7 +17,6 @@ export class MainBodyComponent implements OnChanges {
     if(changes['selectedContent']){
       console.log("PREVIOUS:" + changes['selectedContent'].previousValue);
       console.log("CURRENT:" + changes['selectedContent'].currentValue);
-      switch
     }
   }
 
