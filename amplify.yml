@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 18.20.4  # Specify the Node.js version
+        - nvm use 18.20.4
+        - npm install
+    build:
+      commands:
+        - npm run build  # This will run the Angular build
+  artifacts:
+    baseDirectory: dist/fabs-page
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
