@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build  # This will run the Angular build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: dist/fabs-page
     files:
       - '**/*'
   cache:

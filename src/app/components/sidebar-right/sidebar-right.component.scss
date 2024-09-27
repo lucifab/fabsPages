@@ -21,3 +21,14 @@
         font-size: 25px;
     }
 }
+.button:hover{
+    fa-icon{
+        transition: color 0.5s ease;
+        color:coral;
+    }
+    transition: color 0.5s ease;
+    color:coral;
+    background-color: rgb(148, 28, 146);
+    transition: background-color 0.5s ease;
+    cursor:pointer;
+}
