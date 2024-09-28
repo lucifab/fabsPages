@@ -1,10 +1,11 @@
-<div id="header">
-<img src="../../../assets/images/felix.jpg">
-<h1>{{title}}</h1>
-<div id="articleDate">{{articleDate}}</div>
-</div>
-<div class="articleBody">
-    <p>
-        {{content}}
-    </p>   
+<div class="article">
+    <div id="header">
+        <img [src]="post.AuthorImageUrl">
+        <h1>{{post.Title}}</h1>
+        <div id="articleDate">{{post.CreatedAt | date:"EEEE YYYY-MM-dd hh:mm:ss.SSS OOOO"}}</div>
+        <div id="articleDate">{{post.AuthorName}}</div>
+    </div>
+        <div class="articleBody">
+            <p [innerHTML]="safeContent"></p>   
+    </div>
 </div>

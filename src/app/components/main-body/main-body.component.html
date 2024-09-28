@@ -12,5 +12,10 @@
     </g>
 </svg>
 <div class="bodyContainer">
-    <div *ngIf="selectedContent == 'blog'"><app-article></app-article></div>
+    <div *ngIf="selectedContent == 'blog'">
+        <app-write-post></app-write-post>
+        <div *ngFor="let post of posts">
+            <app-article [post]="post"></app-article>
+        </div>
+    </div>
 </div>
