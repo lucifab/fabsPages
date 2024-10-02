@@ -1,24 +1,20 @@
-<form 
-[formGroup]="myForm">
-    <input
-          matInput
-          [formControl]="myForm.controls.title"
-          placeholder="Title"
-          type="text"/>
-    <editor
-          [formControl]="myForm.controls.body"
-          apiKey="no-api-key"
-          [disabled]="false"
-          id="editor"
-          [init]="{ plugins: 'code help image lists link powerpaste table wordcount',
-                    base_url: '/tinymce',
-                    suffix: '.min'
-                  }"
-          [inline]="false"
-          toolbar="bold italic underline | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help"
-          >
-      </editor>
-</form>
-<p>Value of your text</p>
-<p [innerHTML]="myForm.controls.body.value">
-<button (click)="myTest()" >BUTTONE myTest</button>
+
+      <input [(ngModel)]="postPreview.Title" type="text">
+      <editor
+      [(ngModel)]="postPreview.Content"
+      
+      apiKey="no-api-key"
+      [disabled]="false"
+      id="editor"
+      [init]="{ plugins: 'code help image lists link powerpaste table wordcount',
+                base_url: '/tinymce',
+                suffix: '.min'
+              }"
+      [inline]="false"
+      toolbar="bold italic underline | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help"
+      >
+  </editor>
+
+<button (click)="myTest()">Preview Post</button>
+<app-article *ngIf="displaySetting" [post]="postPreview"></app-article>
+

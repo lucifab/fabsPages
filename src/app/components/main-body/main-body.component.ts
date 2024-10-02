@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Post } from 'src/app/models/post.model';
 import { WebPostsAPIService } from 'src/app/services/data-service.service';
 
@@ -15,7 +16,7 @@ export class MainBodyComponent implements OnChanges {
   @Input() selectedContent: string;
 
   constructor(private apiService: WebPostsAPIService){
-    this.selectedContent = 'blog';
+    this.selectedContent = ''; // Populated within app.component.ts; if you want to change initial starting page
     this.getPostsData();
   }
 

@@ -12,6 +12,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { NgParticlesModule } from 'ng-particles';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { WebPostsAPIService } from './services/data-service.service';
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     FormsModule,
     EditorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
 ],
   providers: [WebPostsAPIService],
   bootstrap: [AppComponent]
