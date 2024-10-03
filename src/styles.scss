@@ -1,28 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+body {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
 }
+
 @font-face {
     font-family: 'Playfair';
     src: url('assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
 }
+
 @font-face {
     font-family: 'PlayfairItalic';
     src: url('assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
 }
+
 @font-face {
     font-family: 'Oswald';
     src: url('assets/fonts/Oswald-VariableFont_wght.ttf');
 }
+
 @font-face {
     font-family: 'SourceSansPro';
     src: url('assets/fonts/SourceSansPro-Regular.ttf');
 }
+
 @font-face {
     font-family: 'SourceSansProBlack';
     src: url('assets/fonts/SourceSansPro-Black.ttf');
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'SourceSansPro', sans-serif;
+}
+
+.articleBody {
+    font-family: 'SourceSansPro';
+    font-size: large;
+    letter-spacing: normal;
+    text-align: justify;
+    line-height: 30px;
+
+    h1,h2,h3,h4,h5,h6 {
+        color: lightgray;
+        font-weight: bold;
+    }
+    h1{
+        font-size: 2rem;
+        padding-left: 20px;
+    }
+    h2{
+        font-size: 1.8rem;
+        padding-left: 25px;
+    }
+    h3{
+        font-size: 1.6rem;
+        padding-left: 30px;
+    }
+    
+}

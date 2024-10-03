@@ -1,5 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Component, ElementRef, Input, OnChanges, OnInit, QueryList, Renderer2, SimpleChanges, ViewChildren } from '@angular/core';
 import { Post } from 'src/app/models/post.model';
 
 @Component({
@@ -7,23 +6,28 @@ import { Post } from 'src/app/models/post.model';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
-export class ArticleComponent implements OnInit,OnChanges{
-  @Input() post!:Post;
-  safeContent!: SafeHtml; // Variable to hold sanitized content
+export class ArticleComponent implements OnChanges {
+  @Input() post!: Post;
+  @ViewChildren('articleBody') articleBodies!: QueryList<ElementRef>;
 
-  constructor(private sanitizer: DomSanitizer){
+  constructor(private renderer: Renderer2) {
   }
 
-  ngOnInit():void{
-    this.updateHtml();
-  }
-  ngOnChanges(changes:SimpleChanges):void{
-    if (changes['post']){
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['post']) {
       this.updateHtml();
       console.log("Post changed!")
     }
   }
-  updateHtml():void{
-    this.safeContent=this.sanitizer.bypassSecurityTrustHtml(this.post.Content);
+  ngAfterViewInit() {
+    this.updateHtml();
+  }
+
+  updateHtml(): void {
+    if (this.articleBodies)
+      this.articleBodies.forEach((articleBody) => {
+        this.renderer.setProperty(articleBody.nativeElement, 'innerHTML', this.post.Content);
+      });
+
   }
 }

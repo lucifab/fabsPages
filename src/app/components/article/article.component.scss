@@ -1,38 +1,27 @@
-.article{
+.article {
     min-height: 200px; // Set your desired minimum height
-    h1{
-        font-family: 'Playfair', sans-serif ;
+
+    h1 {
+        font-family: 'Playfair', sans-serif;
+        font-size: 3rem;
         text-align: right;
         margin-bottom: 0;
     }
-    #articleDate{
+
+    #articleDate {
         text-align: right;
     }
-    #header{
+
+    #header {
         margin: 36px 0 35px 0;
-        img{
-            float:left;
+
+        img {
+            float: left;
             height: 80px;
             border-radius: 5px;
             margin-left: 15px;
         }
     }
-    .articleBody{
-        font-family: 'SourceSansPro';
-        font-size: large;
-        text-align: justify;
-        line-height: 30px;
-        h1{
-            font-family: 'SourceSansPro';
-            margin-bottom: 0;
-            size: 1.8rem;
-        }
-        h2{
-            size: 1.6rem;
-        }
-        h3{
-            size: 1.4rem;
-        }
-    }
+
 }
 

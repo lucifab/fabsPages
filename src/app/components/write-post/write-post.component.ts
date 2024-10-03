@@ -56,6 +56,7 @@ export class WritePostComponent {
         (response) => {
           this.apiResponse = response;
           console.log(response);
+          this.infoMessage='The post was pushed successfully!';
         },
         (error) => {
           console.error('Error fetching data:', error);

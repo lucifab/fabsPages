@@ -5,7 +5,5 @@
         <div id="articleDate">{{post.CreatedAt | date:"EEEE YYYY-MM-dd hh:mm:ss.SSS OOOO"}}</div>
         <div id="articleDate">{{post.AuthorName}}</div>
     </div>
-        <div class="articleBody">
-            <p [innerHTML]="safeContent"></p>   
-    </div>
+    <div class="articleBody" #articleBody></div>
 </div>

@@ -9,6 +9,6 @@ import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from 
 })
 export class AppComponent {
   title = 'fabsPage';
-  selectedContent = 'write';
+  selectedContent = 'blog';
 
 }
