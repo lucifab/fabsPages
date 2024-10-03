@@ -12,11 +12,13 @@ import { ArticleComponent } from './components/article/article.component';
 import { NgParticlesModule } from 'ng-particles';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { WebPostsAPIService } from './services/data-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -38,9 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     EditorModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
 ],
-  providers: [WebPostsAPIService],
+  providers: [WebPostsAPIService, provideAnimationsAsync('noop'), provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

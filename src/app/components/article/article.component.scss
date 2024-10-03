@@ -11,7 +11,7 @@
     #header{
         margin: 36px 0 35px 0;
         img{
-            float:right;
+            float:left;
             height: 80px;
             border-radius: 5px;
             margin-left: 15px;
@@ -22,6 +22,17 @@
         font-size: large;
         text-align: justify;
         line-height: 30px;
+        h1{
+            font-family: 'SourceSansPro';
+            margin-bottom: 0;
+            size: 1.8rem;
+        }
+        h2{
+            size: 1.6rem;
+        }
+        h3{
+            size: 1.4rem;
+        }
     }
 }
 

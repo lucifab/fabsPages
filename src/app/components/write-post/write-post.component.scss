@@ -1,8 +1,22 @@
-textarea{
-    width: 60%;
-    height:250px;
-    padding: 12px 20px;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 16px;
-    background-color: #f8f8f8;
+#flexbox{
+    flex: content;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    #bottom-information{
+        display: flex;
+        justify-content: space-between;
+        #info-messager{
+            color:dimgrey;
+        }
+        #button-container{
+            display: flex;
+            gap:20px;
+            justify-content: end;
+            button{
+                width: auto;
+            }
+        }
+    }
+    
 }
