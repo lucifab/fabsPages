@@ -6,13 +6,32 @@
                     }" [inline]="false"
             toolbar="bold italic underline | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help">
       </editor>
-      
+
       <div id="bottom-information">
-            <div id="info-messager">
-                  <fa-icon *ngIf="infoMessage" [icon]="faWarning"></fa-icon>
+            <div id="info-messager" #messageBoxElement>
+                  <div id="icon-container">
+                        <fa-icon *ngIf="this.infoMessageIconType=='warning'" [icon]="faWarning"></fa-icon>
+                        <fa-icon *ngIf="this.infoMessageIconType=='success'" [icon]="faSquareCheck"></fa-icon>
+                        <fa-icon *ngIf="this.infoMessageIconType=='error'" [icon]="faSquareXmark"></fa-icon>
+                        <mat-progress-spinner [diameter]="16" *ngIf="this.infoMessageIconType=='load'"
+                        mode="indeterminate"></mat-progress-spinner>
+                  </div>
+                  
                   {{infoMessage}}
             </div>
             <div id="button-container">
+                  <button mat-flat-button (click)="testButton('success')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Success
+                  </button>
+                  <button mat-flat-button (click)="testButton('error')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Fail
+                  </button>
+                  <button mat-flat-button (click)="testButton('load')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Load
+                  </button>
                   <button mat-flat-button (click)="previewPost()">
                         <fa-icon [icon]="faEye"></fa-icon>
                         Preview
@@ -23,5 +42,5 @@
                   </button>
             </div>
       </div>
-      <app-article *ngIf="displaySetting" [post]="postPreview"></app-article>
+      <app-article *ngIf="previewDisplaySetting" [post]="postPreview"></app-article>
 </div>

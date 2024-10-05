@@ -29,6 +29,49 @@ body {
     src: url('assets/fonts/SourceSansPro-Black.ttf');
 }
 
+@keyframes glow-success {
+    0% {
+        box-shadow: 0 0 5px rgba(30, 255, 0, 0.5);
+    }
+
+    15% {
+        box-shadow: 0 0 15px rgb(0, 255, 38);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(30, 255, 17, 0.5);
+    }
+}
+
+@keyframes glow-error {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    }
+
+    15% {
+        box-shadow: 0 0 15px rgb(255, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    }
+}
+
+@keyframes glow-warn {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 230, 0, 0.5);
+    }
+
+    15% {
+        box-shadow: 0 0 15px rgb(255, 230, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 230, 0, 0.5);
+    }
+}
+
+
 html,
 body {
     height: 100%;
@@ -45,21 +88,29 @@ body {
     text-align: justify;
     line-height: 30px;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: lightgray;
         font-weight: bold;
     }
-    h1{
+
+    h1 {
         font-size: 2rem;
         padding-left: 20px;
     }
-    h2{
+
+    h2 {
         font-size: 1.8rem;
         padding-left: 25px;
     }
-    h3{
+
+    h3 {
         font-size: 1.6rem;
         padding-left: 30px;
     }
-    
+
 }
