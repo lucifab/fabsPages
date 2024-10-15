@@ -12,20 +12,5 @@
     </g>
 </svg>
 <div class="bodyContainer">
-    <div class="blogContainer" *ngIf="selectedContent == 'blog'">
-
-        <div *ngIf="posts == undefined || posts.length<=0">
-            <mat-progress-spinner class="loader" mode="indeterminate"></mat-progress-spinner>
-        </div>
-
-        <div *ngFor="let post of posts">
-            <app-article [post]="post"></app-article>
-        </div>
-    </div>
-    <app-write-post *ngIf="selectedContent == 'write'"></app-write-post>
-
-    <div *ngIf="selectedContent == 'work'">
-        My Work here
-    </div>
-
+    <router-outlet></router-outlet>
 </div>

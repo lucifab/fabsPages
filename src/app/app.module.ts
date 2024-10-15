@@ -8,6 +8,7 @@ import { MainBodyComponent } from './components/main-body/main-body.component';
 import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.component';
 import { WritePostComponent } from './components/write-post/write-post.component';
 import { ArticleComponent } from './components/article/article.component';
+import { ReadPostComponent } from './components/read-post/read-post.component';
 
 import { NgParticlesModule } from 'ng-particles';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -29,7 +30,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MainBodyComponent,
     ArticleComponent,
     SidebarRightComponent,
-    WritePostComponent
+    WritePostComponent,
+    ReadPostComponent
   ],
   imports: [
     HttpClientModule,

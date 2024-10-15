@@ -1,7 +1,6 @@
 <div class="pageContainer">
     <app-sidebar-left class="sidebarLeft"></app-sidebar-left>
-    <app-main-body [selectedContent]="selectedContent" class="mainBody"></app-main-body>
+    <app-main-body class="mainBody"></app-main-body>
     <app-sidebar-right class="sidebarRight"
-    (contentSelection)="selectedContent = $event"
     ></app-sidebar-right>
 </div>
