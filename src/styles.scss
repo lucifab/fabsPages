@@ -114,31 +114,31 @@ table {
     letter-spacing: normal;
     text-align: justify;
     line-height: 30px;
-    color: #605c5c;
 
     li {
         margin-bottom: 25px;
     }
 
-    h1,
-    h2,
+    
     h3,
     h4,
     h5,
     h6 {
-        font-family: 'PoppinsMedium';
+        font-family: 'PoppinsLight';
     }
 
     h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
+        font-family: 'PoppinsMedium';
         font-size: 1.8rem;
     }
 
-    h3 {
+    h2 {
         font-size: 1.6rem;
+        font-family: 'PoppinsRegular';
+    }
+
+    h3 {
+        font-size: 1.4rem;
     }
 
 }

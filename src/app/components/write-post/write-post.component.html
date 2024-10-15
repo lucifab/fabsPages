@@ -1,10 +1,10 @@
 <div id="flexbox">
       <input [(ngModel)]="postNew.Title" type="text" placeholder="Title goes here" class="tox tox-tinymce">
-      <editor [(ngModel)]="postNew.Content" apiKey="no-api-key" [disabled]="false" id="editor" [init]="{ plugins: 'code help image lists link powerpaste table wordcount',
+      <editor [(ngModel)]="postNew.Content" apiKey="no-api-key" [disabled]="false" id="editor" [init]="{ plugins: 'code help image lists link table wordcount',
                       base_url: '/tinymce',
                       suffix: '.min'
                     }" [inline]="false"
-            toolbar="bold italic underline | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help">
+            toolbar="bold italic underline code | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help">
       </editor>
 
       <div id="bottom-information">
