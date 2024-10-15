@@ -29,6 +29,19 @@ body {
     src: url('assets/fonts/SourceSansPro-Black.ttf');
 }
 
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('assets/fonts/Poppins/Poppins-Light.ttf');
+}
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url('assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+
 @keyframes glow-success {
     0% {
         box-shadow: 0 0 5px rgba(30, 255, 0, 0.5);
@@ -100,22 +113,19 @@ body {
     h4,
     h5,
     h6 {
-        font-weight: bold;
+        font-family: 'PoppinsMedium';
     }
 
     h1 {
         font-size: 2rem;
-        padding-left: 20px;
     }
 
     h2 {
         font-size: 1.8rem;
-        padding-left: 25px;
     }
 
     h3 {
         font-size: 1.6rem;
-        padding-left: 30px;
     }
 
 }
