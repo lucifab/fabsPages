@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper, faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar-right',
@@ -15,7 +15,8 @@ export class SidebarRightComponent {
   faPalette = faPalette;
   faPerson = faPerson;
   faPeopleGroup = faPeopleGroup;
-  faNewspaper = faNewspaper; 
+  faNewspaper = faNewspaper;
+  faPenNib = faPenNib; 
 
   emitContentSelection(contentType: string){
     this.contentSelection.emit(contentType);

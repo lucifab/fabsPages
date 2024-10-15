@@ -1,0 +1,46 @@
+
+#flexbox{
+    color:dimgrey;
+    flex: content;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    #bottom-information{
+        display: flex;
+        justify-content: space-between;
+        gap:30px;
+        #info-messager{
+            border-radius: 9999px;
+            padding: 0 25px 0 25px;
+            display: flex;
+            gap:10px;
+            align-items: center;
+        }
+        #button-container{
+            display: flex;
+            gap:20px;
+            justify-content: end;
+            button{
+                width: auto;
+            }
+
+        }
+    }
+    
+}
+
+.messagebox-error{
+    background-color: #ff6767;
+    color:#a61010;
+    animation: glow-error 1.5s ease-out 3s;
+}
+.messagebox-warn{
+    background-color: #ffd864;
+    color:#ff730d;
+    animation: glow-warn 1.5s ease-out 3s;
+}
+.messagebox-success{
+    background-color: palegreen;
+    color:green;
+    animation: glow-success 1.5s ease-out 3s;
+}

@@ -1,0 +1,46 @@
+<div id="flexbox">
+      <input [(ngModel)]="postNew.Title" type="text" placeholder="Title goes here" class="tox tox-tinymce">
+      <editor [(ngModel)]="postNew.Content" apiKey="no-api-key" [disabled]="false" id="editor" [init]="{ plugins: 'code help image lists link powerpaste table wordcount',
+                      base_url: '/tinymce',
+                      suffix: '.min'
+                    }" [inline]="false"
+            toolbar="bold italic underline | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help">
+      </editor>
+
+      <div id="bottom-information">
+            <div id="info-messager" #messageBoxElement>
+                  <div id="icon-container">
+                        <fa-icon *ngIf="this.infoMessageIconType=='warning'" [icon]="faWarning"></fa-icon>
+                        <fa-icon *ngIf="this.infoMessageIconType=='success'" [icon]="faSquareCheck"></fa-icon>
+                        <fa-icon *ngIf="this.infoMessageIconType=='error'" [icon]="faSquareXmark"></fa-icon>
+                        <mat-progress-spinner [diameter]="16" *ngIf="this.infoMessageIconType=='load'"
+                        mode="indeterminate"></mat-progress-spinner>
+                  </div>
+                  
+                  {{infoMessage}}
+            </div>
+            <div id="button-container">
+                  <!-- <button mat-flat-button (click)="testButton('success')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Success
+                  </button>
+                  <button mat-flat-button (click)="testButton('error')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Fail
+                  </button>
+                  <button mat-flat-button (click)="testButton('load')">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Load
+                  </button> -->
+                  <button mat-flat-button (click)="previewPost()">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                        Preview
+                  </button>
+                  <button mat-flat-button (click)="pushPostData()">
+                        <fa-icon [icon]="faUpload"></fa-icon>
+                        Publish
+                  </button>
+            </div>
+      </div>
+      <app-article *ngIf="previewDisplaySetting" [post]="postPreview"></app-article>
+</div>
