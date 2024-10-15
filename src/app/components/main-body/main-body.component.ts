@@ -22,6 +22,7 @@ export class MainBodyComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void { // Use ngOnChanges to monitor updates of @Input
     if(changes['selectedContent']){
+      this.posts = [];
       var changed=changes['selectedContent'];
       console.log("PREVIOUS:" + changed.previousValue);
       console.log("CURRENT:" + changed.currentValue);

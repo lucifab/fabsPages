@@ -14,7 +14,7 @@
 <div class="bodyContainer">
     <div class="blogContainer" *ngIf="selectedContent == 'blog'">
 
-        <div *ngIf="posts == undefined">
+        <div *ngIf="posts == undefined || posts.length<=0">
             <mat-progress-spinner class="loader" mode="indeterminate"></mat-progress-spinner>
         </div>
 
