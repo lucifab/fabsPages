@@ -87,6 +87,12 @@ body {
     letter-spacing: normal;
     text-align: justify;
     line-height: 30px;
+    color: #605c5c;
+
+    li {
+        margin-bottom: 25px;
+        list-style-type: decimal;
+    }
 
     h1,
     h2,
@@ -94,7 +100,6 @@ body {
     h4,
     h5,
     h6 {
-        color: lightgray;
         font-weight: bold;
     }
 
