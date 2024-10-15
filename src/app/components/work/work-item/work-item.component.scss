@@ -1,0 +1,31 @@
+.workplace-container{
+    display: flex;
+    gap:20px;
+    height: 150px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    #image{
+        background-color: white;
+        height: 100%;
+        img{
+            margin-right: 10px;
+            width: 130px;
+        }
+    }
+    
+
+    #company-employee-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        #company{
+            font-family: 'PoppinsMedium';
+            font-size: 2rem;
+        }
+        #title{
+            font-family: 'PoppinsLight';
+            font-size: 1.3rem;
+        }
+    }
+}

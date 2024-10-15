@@ -1,0 +1,18 @@
+<div class="workplace-container">
+    <div id="image">
+        <img [src]="this.workplace.WorkImageUrl">
+    </div>
+    <div id="company-employee-info">
+        <div id="company">
+            {{this.workplace.CompanyName}}
+        </div>
+        <div id="title">
+            {{this.workplace.Title}}
+        </div>
+        <div>
+            {{this.workplace.StartedAt.toLocaleDateString()}} - {{this.workplace.EndedAt?this.workplace.EndedAt.toLocaleDateString():'Present'}}    
+        </div>
+        <a [href]="workplace.WorkWebsite">{{workplace.WorkWebsite}}</a>
+    </div>
+</div>
+
