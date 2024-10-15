@@ -22,8 +22,13 @@ export class MainBodyComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void { // Use ngOnChanges to monitor updates of @Input
     if(changes['selectedContent']){
-      console.log("PREVIOUS:" + changes['selectedContent'].previousValue);
-      console.log("CURRENT:" + changes['selectedContent'].currentValue);
+      var changed=changes['selectedContent'];
+      console.log("PREVIOUS:" + changed.previousValue);
+      console.log("CURRENT:" + changed.currentValue);
+      if(changed.currentValue=="blog" && changed.previousValue!=null){
+        console.log("Retrieving refreshed blog data.");
+        this.getPostsData();
+      }
     }
   }
 
