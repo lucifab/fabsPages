@@ -44,6 +44,17 @@ body {
     src: url('assets/fonts/Poppins/Poppins-Medium.ttf');
 }
 
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Tight';
+    src: url('assets/fonts/Inter_Tight/InterTight-VariableFont_wght.ttf');
+}
+
+
 @keyframes glow-success {
     0% {
         box-shadow: 0 0 5px rgba(30, 255, 0, 0.5);
@@ -94,6 +105,28 @@ body {
 
 body {
     font-family: 'SourceSansPro', sans-serif;
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Lato-Regular';
+    }
+
+    h1 {
+        font-family: 'Playfair';
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        font-family: 'Inter-Tight';
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-family: 'Inter-Tight';
+    }
 }
 
 table {

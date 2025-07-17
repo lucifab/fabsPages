@@ -1,5 +1,6 @@
+import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { DatePipe } from '@angular/common';
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, ElementRef, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { Workplace } from 'src/app/models/workplace.model';
 
 @Pipe({ name: 'sortByEndDate' })
@@ -7,13 +8,18 @@ export class SortByEndDatePipe implements PipeTransform {
   transform(value: Workplace[], direction: 'asc' | 'desc' = 'asc'): Workplace[] {
     if (!Array.isArray(value)) return value;
 
-    const flip = direction == 'asc' ? -1 : 1;
+    const flip = direction == 'asc' ? 1 : -1;
 
     return [...value].sort((a, b) => {
-      if (!a.EndedAt && !b.EndedAt) return 0;
-      if (!a.EndedAt) return -1 * flip;
-      if (!b.EndedAt) return 1 * flip;
-      return flip *(new Date(a.EndedAt).getTime() - new Date(b.EndedAt).getTime());
+      if (!a.EndedAt && !b.EndedAt) {
+        if (!a.StartedAt && !b.StartedAt) return 0;
+        if (!a.StartedAt) return 1 * flip;
+        if (!b.StartedAt) return -1 * flip;
+        return flip * (new Date(a.StartedAt).getTime() - new Date(b.StartedAt).getTime());
+      };
+      if (!a.EndedAt) return 1 * flip;
+      if (!b.EndedAt) return -1 * flip;
+      return flip * (new Date(a.EndedAt).getTime() - new Date(b.EndedAt).getTime());
     });
   }
 }
@@ -27,8 +33,14 @@ export class SortByEndDatePipe implements PipeTransform {
 })
 export class WorkpageComponent {
 
+  @ViewChild('philosophy') philosophyDiv!: ElementRef<HTMLDivElement>;
+
   constructor(private datePipe: DatePipe) {
   }
+
+  protected dropdown: { [key: string]: boolean } = {
+    philosophy: false
+  };
 
   workplaces: Workplace[] = [
     {
@@ -59,5 +71,4 @@ export class WorkpageComponent {
       WorkWebsite: 'https://www.kpu.ca/'
     }
   ];
-
 }

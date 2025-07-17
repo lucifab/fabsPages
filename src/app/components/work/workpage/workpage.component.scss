@@ -1,8 +1,62 @@
-.workplaces-container{
+.workplaces-container {
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
 }
+
 h1{
-    font-family: 'Playfair';
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #4d535a;
+}
+
+.tech-stack-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    div {
+        border-radius: 12px;
+        padding: 4px 8px;
+
+    }
+
+    .good {
+        background-color: lightgreen;
+    }
+    .average {
+        background-color: lightgoldenrodyellow;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+    }
+
+    .text {
+        gap:8px;
+        transition: height 0.4s ease;
+    }
+}
+
+.collapsed {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
 }
