@@ -22,6 +22,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { WebPostsAPIService } from './services/data-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { SpeechBubbleComponent } from './components/work/workpage/speech-bubble/speech-bubble.component';
 
 
 
@@ -36,6 +37,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ReadPostComponent,
     WorkItemComponent,
     WorkpageComponent,
+    SpeechBubbleComponent,
     SortByEndDatePipe
   ],
   imports: [

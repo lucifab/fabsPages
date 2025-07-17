@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="persons-container">
+        <div *ngFor="let person of persons">
+            <img [src]="person.image" (click)="displayMessage(person)" [ngClass]="{'glow':person.id==personIdSelected}" />
+        </div>
+    </div>
+    <section class="bubble">
+        <div class="quote top">"</div>
+        <div class="quote bottom">"</div>
+        <p *ngIf="showMessage" @fadeText>{{message}}</p>
+    </section>
+    <div class="name">
+        {{persons[personIdSelected].name}}, a {{persons[personIdSelected].relationship.toLowerCase()}}
+    </div>
+</div>
