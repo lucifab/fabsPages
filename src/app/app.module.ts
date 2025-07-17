@@ -9,8 +9,8 @@ import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.
 import { WritePostComponent } from './components/write-post/write-post.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ReadPostComponent } from './components/read-post/read-post.component';
-import { WorkItemComponent } from './components/work/work-item/work-item.component';
-import { WorkpageComponent } from './components/work/workpage/workpage.component';
+import { WorkItemComponent } from './components/work/workpage/work-item/work-item.component';
+import { SortByEndDatePipe, WorkpageComponent } from './components/work/workpage/workpage.component';
 
 import { NgParticlesModule } from 'ng-particles';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -35,7 +35,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     WritePostComponent,
     ReadPostComponent,
     WorkItemComponent,
-    WorkpageComponent
+    WorkpageComponent,
+    SortByEndDatePipe
   ],
   imports: [
     HttpClientModule,

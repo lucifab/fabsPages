@@ -10,7 +10,7 @@
             {{this.workplace.Title}}
         </div>
         <div>
-            {{this.workplace.StartedAt.toLocaleDateString()}} - {{this.workplace.EndedAt?this.workplace.EndedAt.toLocaleDateString():'Present'}}    
+            {{this.workplace.StartedAt.toLocaleDateString() | date:'MMMM yyyy'}} - {{this.workplace.EndedAt? (this.workplace.EndedAt.toLocaleDateString() | date:'MMMM yyyy') :'Present'}}    
         </div>
         <a [href]="workplace.WorkWebsite">{{workplace.WorkWebsite}}</a>
     </div>
