@@ -8,7 +8,7 @@ import { Post } from 'src/app/models/post.model';
     standalone: false
 })
 export class ArticleComponent implements OnChanges {
-  @Input() post!: Post;
+  @Input('post') post!: Post;
   @ViewChildren('articleBody') articleBodies!: QueryList<ElementRef>;
 
   constructor(private renderer: Renderer2) {
