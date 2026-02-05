@@ -1,10 +1,11 @@
 .workplaces-container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-h1{
+h1 {
     font-size: 2.2rem;
 }
 
@@ -26,6 +27,7 @@ h2 {
     .good {
         background-color: lightgreen;
     }
+
     .average {
         background-color: lightgoldenrodyellow;
     }
@@ -50,9 +52,51 @@ h2 {
     }
 
     .text {
-        gap:8px;
+        gap: 8px;
         transition: height 0.4s ease;
     }
+}
+
+.flexbox-adjust {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+
+    .item {
+        background-color: lightcyan;
+        border-radius: 15px;
+        max-width: calc(49%);
+        padding: 10px;
+
+        .item-text {
+            min-height: 150px;
+            max-height: 400px;
+            overflow: scroll;
+        }
+
+        h2 {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+app-work-item {
+    padding: 0 15px;
+    margin: 0 10px;
+    flex-grow: 1;
+}
+
+.primary-work {
+    background-color: lightgreen;
+}
+
+.secondary-work {
+    background-color: lightgrey;
+}
+
+.max-width {
+    max-width: none !important;
+    flex-grow: 1;
 }
 
 .collapsed {

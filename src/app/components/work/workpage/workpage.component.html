@@ -6,90 +6,6 @@ Add testimonials with collapsibles
 <div class="wrapper">
     <div class="container">
         <h1>Career Details</h1>
-
-        <div class="container text">
-            <h2>About</h2>
-            <div>
-                As a full-stack developer working in the financial technology space—particularly within the sports and
-                entertainment industry—
-                I've contributed to projects supporting major organizations like the NHL, NFL, Austin FC, EBG,
-                Learfield,
-                and others through Two Circles and KORE. My work spans modernizing front-end applications,
-                architecting backend services, and managing complex data pipelines that support real-time business
-                needs.
-            </div>
-        </div>
-
-        <div class="container text">
-
-            <h2>Philosophy</h2>
-            <div class="container text">
-
-                <div>
-                    I'm driven by a deep curiosity and love for learning—whether it's exploring new programming
-                    paradigms,
-                    understanding business operations,
-                    or diving into the inner workings of an industry. This mindset pushes me to continuously evolve,
-                    integrating insights from across
-                    disciplines to build smarter, more impactful solutions. I don’t just learn for the sake of
-                    knowledge—I
-                    apply what I learn to
-                    connect the technical with the strategic, ensuring every line of code contributes to a clear
-                    business
-                    goal. I bring a detail-oriented and thorough approach to development,
-                    ensuring that nuanced tasks are thoughtfully handled.
-                </div>
-                <div>
-                    By combining deep technical expertise with a strong grasp of industry-specific needs, I deliver
-                    solutions
-                    that not only meet high engineering standards
-                    but directly align with client objectives—translating complex business requirements into great
-                    products
-                    that
-                    resonate
-                    with the unique demands of the sports and entertainment sector.
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="container text">
-            <h2>References</h2>
-            <app-speech-bubble></app-speech-bubble>
-        </div>
-
-        <div class="container text">
-            <h2>Key Responsibilities & Achievements</h2>
-            <ul>
-                <li>Diagnosed and resolved long-standing issues (4+ years) in legacy SQL and T-SQL code used for
-                    Microsoft
-                    Dynamics
-                    GP integrations, improving system reliability and data accuracy.</li>
-
-                <li>Upgraded Angular applications from v8 to v21, optimizing performance, enhancing UI/UX, and ensuring
-                    compatibility with modern frameworks.</li>
-
-                <li>Managed and refactored front-end project dependencies, updating internal and external npm libraries
-                    to
-                    support
-                    the Angular upgrade and reduce technical debt.</li>
-
-                <li>Executed complex database migrations and ETL processes between Salesforce and Microsoft Dynamics,
-                    ensuring
-                    data
-                    integrity and alignment across systems.</li>
-
-                <li>Designed and maintained DWA and third-party data integrations (e.g., Melissa), implementing golden
-                    record
-                    management for client data using SQL Server Jobs, REST APIs, and internal logic layers.</li>
-
-                <li>Developed backend services with C# and .NET to manage sports team programming, including sponsorship
-                    tracking and
-                    asset
-                    workflows, supporting high-volume scheduling and partner needs.</li>
-            </ul>
-        </div>
         <div class="container">
             <h2>Tech Stack</h2>
             <div class="tech-stack-container">
@@ -109,11 +25,104 @@ Add testimonials with collapsibles
                 <div class="average">Javascript</div>
             </div>
         </div>
+
+        <div class="container flexbox-adjust">
+            <div class="item">
+                <h2>About</h2>
+                <div class="item-text">
+                    As a full-stack developer working in the financial technology space—particularly within the sports
+                    and
+                    entertainment industry—
+                    I've contributed to projects supporting major organizations like the NHL, NFL, Austin FC, EBG,
+                    Learfield,
+                    and others through Two Circles and KORE. My work spans modernizing front-end applications,
+                    architecting backend services, and managing complex data pipelines that support real-time business
+                    needs.
+                </div>
+            </div>
+
+            <div class="item">
+
+                <h2>Philosophy</h2>
+                <div class="item-text">
+
+                    <div>
+                        I'm driven by a deep curiosity and love for learning—whether it's exploring new programming
+                        paradigms,
+                        understanding business operations,
+                        or diving into the inner workings of an industry. This mindset pushes me to continuously evolve,
+                        integrating insights from across
+                        disciplines to build smarter, more impactful solutions. I don’t just learn for the sake of
+                        knowledge—I
+                        apply what I learn to
+                        connect the technical with the strategic, ensuring every line of code contributes to a clear
+                        business
+                        goal. I bring a detail-oriented and thorough approach to development,
+                        ensuring that nuanced tasks are thoughtfully handled.
+                        <br><br>
+                        By combining deep technical expertise with a strong grasp of industry-specific needs, I deliver
+                        solutions
+                        that not only meet high engineering standards
+                        but directly align with client objectives—translating complex business requirements into great
+                        products
+                        that
+                        resonate
+                        with the unique demands of the sports and entertainment sector.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item max-width">
+                <h2>Key Responsibilities & Achievements</h2>
+                <ul class="item-text">
+                    <li>Diagnosed and resolved long-standing issues (4+ years) in legacy SQL and T-SQL code used for
+                        Microsoft
+                        Dynamics
+                        GP integrations, improving system reliability and data accuracy.</li>
+
+                    <li>Upgraded Angular applications from v8 to v21, optimizing performance, enhancing UI/UX, and
+                        ensuring
+                        compatibility with modern frameworks.</li>
+
+                    <li>Managed and refactored front-end project dependencies, updating internal and external npm
+                        libraries
+                        to
+                        support
+                        the Angular upgrade and reduce technical debt.</li>
+
+                    <li>Executed complex database migrations and ETL processes between Salesforce and Microsoft
+                        Dynamics,
+                        ensuring
+                        data
+                        integrity and alignment across systems.</li>
+
+                    <li>Designed and maintained DWA and third-party data integrations (e.g., Melissa), implementing
+                        golden
+                        record
+                        management for client data using SQL Server Jobs, REST APIs, and internal logic layers.</li>
+
+                    <li>Developed backend services with C# and .NET to manage sports team programming, including
+                        sponsorship
+                        tracking and
+                        asset
+                        workflows, supporting high-volume scheduling and partner needs.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="container text">
+            <h2>References</h2>
+            <app-speech-bubble></app-speech-bubble>
+        </div>
+
     </div>
     <div class="container-h1">
         <h1>Work & Education</h1>
-        <div class="workplaces-container" *ngFor="let item of workplaces | sortByEndDate:'desc'">
-            <app-work-item [workplace]="item"></app-work-item>
+        <div class="workplaces-container">
+            @for (item of workplaces | sortByEndDate:'desc'; track $index) {
+                <app-work-item [ngClass]="{'primary-work':$index==0, 'secondary-work':$index!==0, 'max-width':($index===workplaces.length-1 && ($index+1) % 2 !== 0)}" [workplace]="item"></app-work-item>
+            }
         </div>
     </div>
 </div>
