@@ -1,29 +1,32 @@
-.workplace-container{
+.workplace-container {
     display: flex;
-    gap:20px;
+    gap: 10px;
     height: 150px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     align-items: center;
+    background:var(--image-bg) 100% 59% /200px no-repeat;
+    border-radius: 15px;
 
-    #image{
-        background-color: white;
+    #image {
         height: 100%;
-        img{
+
+        img {
             margin-right: 10px;
             width: 130px;
         }
     }
-    
 
-    #company-employee-info{
+    #company-employee-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        #company{
+
+        #company {
             font-family: 'PoppinsMedium';
             font-size: 1.5rem;
         }
-        #title{
+
+        #title {
             font-family: 'PoppinsLight';
             font-size: 1rem;
         }

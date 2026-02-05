@@ -1,7 +1,7 @@
-<div class="workplace-container">
-    <div id="image">
+<div class="workplace-container" [style.--image-bg]="'url(' + workplace.WorkImageUrl + ')'">
+    <!-- <div id="image">
         <img [src]="this.workplace.WorkImageUrl">
-    </div>
+    </div> -->
     <div id="company-employee-info">
         <div id="company">
             {{this.workplace.CompanyName}}

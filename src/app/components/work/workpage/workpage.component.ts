@@ -34,8 +34,6 @@ export class SortByEndDatePipe implements PipeTransform {
 })
 export class WorkpageComponent {
 
-  @ViewChild('philosophy') philosophyDiv!: ElementRef<HTMLDivElement>;
-
   constructor(private datePipe: DatePipe) {
   }
 
@@ -50,7 +48,7 @@ export class WorkpageComponent {
       Title: 'Full-Stack Dev',
       StartedAt: new Date('2021-04-16'),
       EndedAt: new Date('2023-10-16'),
-      WorkImageUrl: 'https://media.licdn.com/dms/image/v2/C4D0BAQFTE3IuE4f_sQ/company-logo_200_200/company-logo_200_200/0/1646949025950/koresoftware_logo?e=2147483647&v=beta&t=0zXTwbRykQG-TGWsde7TTytpqvPGdIeZQU8kHdczRgA',
+      WorkImageUrl: './assets/images/kore.png',
       WorkWebsite: 'https://koresoftware.com/'
     },
     {
@@ -59,7 +57,7 @@ export class WorkpageComponent {
       Title: 'Software Developer',
       StartedAt: new Date('2021-04-16'),
       EndedAt: null,
-      WorkImageUrl: 'https://www.liberty-cf.com/images/8f0596bf-52b6-4753-8eef-355af9e8c179/sp/two-circles-logo-transparent-new.webp',
+      WorkImageUrl: './assets/images/2c.png',
       WorkWebsite: 'https://twocircles.com/gb/'
     },
     {
@@ -68,7 +66,7 @@ export class WorkpageComponent {
       Title: 'Information Technology Diploma',
       StartedAt: new Date('2018-09-28'),
       EndedAt: new Date('2020-09-28'),
-      WorkImageUrl: 'https://www.kpu.ca/themes/custom/kpu/logo.svg',
+      WorkImageUrl: './assets/images/kpu.png',
       WorkWebsite: 'https://www.kpu.ca/'
     }
   ];

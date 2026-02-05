@@ -63,15 +63,16 @@ h2 {
     flex-wrap: wrap;
 
     .item {
-        background-color: lightcyan;
-        border-radius: 15px;
         max-width: calc(49%);
-        padding: 10px;
-
         .item-text {
-            min-height: 150px;
-            max-height: 400px;
+            padding: 10px;
+            background-color: lightcyan;
+            border-radius: 15px;
+            height: 400px;
             overflow: scroll;
+            ul, li{
+                margin-left: 20px;
+            }
         }
 
         h2 {
@@ -82,8 +83,8 @@ h2 {
 
 app-work-item {
     padding: 0 15px;
-    margin: 0 10px;
     flex-grow: 1;
+    border-radius: 5px;
 }
 
 .primary-work {
@@ -91,7 +92,7 @@ app-work-item {
 }
 
 .secondary-work {
-    background-color: lightgrey;
+    background-color:rgb(243, 243, 243);
 }
 
 .max-width {
