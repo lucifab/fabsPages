@@ -7,40 +7,38 @@
             toolbar="undo redo | bold italic underline | blocks blockquote | formatpainter | aligncenter alignleft alignright alignjustify | selectall | ltr rtl | code | help">
       </editor>
 
-      <div id="bottom-information">
-            <div id="info-messager" #messageBoxElement>
-                  <div id="icon-container">
-                        <fa-icon *ngIf="this.infoMessageIconType=='warning'" [icon]="faWarning"></fa-icon>
-                        <fa-icon *ngIf="this.infoMessageIconType=='success'" [icon]="faSquareCheck"></fa-icon>
-                        <fa-icon *ngIf="this.infoMessageIconType=='error'" [icon]="faSquareXmark"></fa-icon>
-                        <mat-progress-spinner [diameter]="16" *ngIf="this.infoMessageIconType=='load'"
-                        mode="indeterminate"></mat-progress-spinner>
-                  </div>
-                  
-                  {{infoMessage}}
-            </div>
-            <div id="button-container">
-                  <!-- <button mat-flat-button (click)="testButton('success')">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                        Success
-                  </button>
-                  <button mat-flat-button (click)="testButton('error')">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                        Fail
-                  </button>
-                  <button mat-flat-button (click)="testButton('load')">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                        Load
-                  </button> -->
-                  <button mat-flat-button (click)="previewPost()">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                        Preview
-                  </button>
-                  <button mat-flat-button (click)="pushPostData()">
-                        <fa-icon [icon]="faUpload"></fa-icon>
-                        Publish
-                  </button>
-            </div>
+  <div id="bottom-information">
+    <div id="info-messager" #messageBoxElement>
+      <div id="icon-container">
+        @if (this.infoMessageIconType=='warning') {
+          <fa-icon [icon]="faWarning"></fa-icon>
+        }
+        @if (this.infoMessageIconType=='success') {
+          <fa-icon [icon]="faSquareCheck"></fa-icon>
+        }
+        @if (this.infoMessageIconType=='error') {
+          <fa-icon [icon]="faSquareXmark"></fa-icon>
+        }
+        @if (this.infoMessageIconType=='load') {
+          <mat-progress-spinner [diameter]="16"
+          mode="indeterminate"></mat-progress-spinner>
+        }
       </div>
-      <app-article *ngIf="previewDisplaySetting" [post]="postPreview"></app-article>
+
+      {{infoMessage}}
+    </div>
+    <div id="button-container">
+      <button mat-flat-button (click)="previewPost()">
+        <fa-icon [icon]="faEye"></fa-icon>
+        Preview
+      </button>
+      <button mat-flat-button (click)="pushPostData()">
+        <fa-icon [icon]="faUpload"></fa-icon>
+        Publish
+      </button>
+    </div>
+  </div>
+  @if (previewDisplaySetting) {
+    <app-article [post]="postPreview"></app-article>
+  }
 </div>

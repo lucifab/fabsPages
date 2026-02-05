@@ -6,9 +6,10 @@ import { WebPostsAPIService } from 'src/app/services/data-service.service';
 import { timer } from 'rxjs/internal/observable/timer';
 
 @Component({
-  selector: 'app-write-post',
-  templateUrl: './write-post.component.html',
-  styleUrl: './write-post.component.scss'
+    selector: 'app-write-post',
+    templateUrl: './write-post.component.html',
+    styleUrl: './write-post.component.scss',
+    standalone: false
 })
 export class WritePostComponent {
 

@@ -4,10 +4,11 @@ import { WebPostsAPIService } from 'src/app/services/data-service.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-read-post',
-  templateUrl: './read-post.component.html',
-  styleUrl: './read-post.component.scss',
-  providers: [WebPostsAPIService]
+    selector: 'app-read-post',
+    templateUrl: './read-post.component.html',
+    styleUrl: './read-post.component.scss',
+    providers: [WebPostsAPIService],
+    standalone: false
 })
 export class ReadPostComponent {
 

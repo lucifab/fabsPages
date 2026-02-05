@@ -2,9 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper, faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-sidebar-right',
-  templateUrl: './sidebar-right.component.html',
-  styleUrls: ['./sidebar-right.component.scss']
+    selector: 'app-sidebar-right',
+    templateUrl: './sidebar-right.component.html',
+    styleUrls: ['./sidebar-right.component.scss'],
+    standalone: false
 })
 export class SidebarRightComponent {
 

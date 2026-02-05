@@ -2,9 +2,10 @@ import { Component, ElementRef, Input, OnChanges, OnInit, QueryList, Renderer2, 
 import { Post } from 'src/app/models/post.model';
 
 @Component({
-  selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+    selector: 'app-article',
+    templateUrl: './article.component.html',
+    styleUrls: ['./article.component.scss'],
+    standalone: false
 })
 export class ArticleComponent implements OnChanges {
   @Input() post!: Post;
