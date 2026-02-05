@@ -7,6 +7,7 @@ const DEFAULT_DURATION = 100;
   selector: 'app-speech-bubble',
   templateUrl: './speech-bubble.component.html',
   styleUrl: './speech-bubble.component.scss',
+  standalone: false,
   animations: [
     trigger('collapse', [
       state('false', style({ height: 150, visibility: AUTO_STYLE })),

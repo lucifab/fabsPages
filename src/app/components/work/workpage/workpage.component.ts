@@ -3,7 +3,7 @@ import { DatePipe } from '@angular/common';
 import { Component, ElementRef, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { Workplace } from 'src/app/models/workplace.model';
 
-@Pipe({ name: 'sortByEndDate' })
+@Pipe({ name: 'sortByEndDate', standalone: false })
 export class SortByEndDatePipe implements PipeTransform {
   transform(value: Workplace[], direction: 'asc' | 'desc' = 'asc'): Workplace[] {
     if (!Array.isArray(value)) return value;
@@ -29,7 +29,8 @@ export class SortByEndDatePipe implements PipeTransform {
   selector: 'app-workpage',
   templateUrl: './workpage.component.html',
   styleUrl: './workpage.component.scss',
-  providers: [DatePipe]
+  providers: [DatePipe],
+  standalone: false
 })
 export class WorkpageComponent {
 

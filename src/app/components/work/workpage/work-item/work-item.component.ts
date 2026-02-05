@@ -4,7 +4,8 @@ import { Workplace } from 'src/app/models/workplace.model';
 @Component({
   selector: 'app-work-item',
   templateUrl: './work-item.component.html',
-  styleUrl: './work-item.component.scss'
+  styleUrl: './work-item.component.scss',
+  standalone: false
 })
 export class WorkItemComponent {
 @Input() public workplace: Workplace;
