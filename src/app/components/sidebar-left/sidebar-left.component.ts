@@ -5,9 +5,10 @@ import { faLinkedin, faGithub, faTumblr } from '@fortawesome/free-brands-svg-ico
 
 
 @Component({
-  selector: 'app-sidebar-left',
-  templateUrl: './sidebar-left.component.html',
-  styleUrls: ['./sidebar-left.component.scss']
+    selector: 'app-sidebar-left',
+    templateUrl: './sidebar-left.component.html',
+    styleUrls: ['./sidebar-left.component.scss'],
+    standalone: false
 })
 export class SidebarLeftComponent {
 
