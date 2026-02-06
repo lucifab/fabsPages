@@ -12,12 +12,12 @@ export class WebPostsAPIService {
 
   constructor(private http: HttpClient) { }
 
-  getData():Observable<Array<Post>>{
+  getData():Observable<Post[]>{
 
     const headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
-    return this.http.get<Array<Post>>(`${this.apiUrl}/posts`,{headers:headers});
+    return this.http.get<Post[]>(`${this.apiUrl}/posts`,{headers:headers});
   }
 
   pushData(post:Post):Observable<any>{
