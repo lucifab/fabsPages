@@ -30,24 +30,26 @@ export class WritePostComponent {
   //Post variables
   infoMessage: string = '';
   postPreview: Post = {
-    Title: '',
-    Content: '',
-    AuthorName: 'Fabiane Arruda',
-    AuthorId: 1,
-    CreatedAt: new Date(),
-    UpdatedAt: new Date(),
-    Id: 0,
-    AuthorImageUrl: ''
+    title: '',
+    content: '',
+    authorName: 'Fabiane Arruda',
+    authorId: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    id: 0,
+    authorImageUrl: '',
+    isActive: true
   }
   postNew: Post = {
-    Title: '',
-    Content: '',
-    AuthorName: '',
-    AuthorId: 0,
-    CreatedAt: new Date(),
-    UpdatedAt: new Date(),
-    Id: 0,
-    AuthorImageUrl: ''
+    title: '',
+    content: '',
+    authorName: '',
+    authorId: 0,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    id: 0,
+    authorImageUrl: '',
+    isActive: true
   }
   public myForm = new FormGroup({
     title: new FormControl("", Validators.required),
@@ -113,13 +115,13 @@ export class WritePostComponent {
   }
 
   public isPostValid() {
-    let valid = this.postNew.Title && this.postNew.Content;
+    let valid = this.postNew.title && this.postNew.content;
     if (!valid) {
       let missingParts: string[] = [];
       let finalText: string = '';
-      if (!this.postNew.Title)
+      if (!this.postNew.title)
         missingParts.push('Title');
-      if (!this.postNew.Content)
+      if (!this.postNew.content)
         missingParts.push('Content');
       finalText = missingParts.join(', ');
       this.setMessageIcon('warning');
@@ -137,14 +139,15 @@ export class WritePostComponent {
     if (this.isPostValid()) {
       this.previewDisplaySetting = true;
       this.postPreview = {
-        Title: this.postNew.Title,
-        Content: this.postNew.Content,
-        AuthorName: 'Fabiane Arruda',
-        AuthorId: 1,
-        CreatedAt: new Date(),
-        UpdatedAt: new Date(),
-        Id: 0,
-        AuthorImageUrl: 'https://lucidev-assets.s3.us-east-2.amazonaws.com/angel.jpeg'
+        title: this.postNew.title,
+        content: this.postNew.content,
+        authorName: 'Fabiane Arruda',
+        authorId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        id: 0,
+        authorImageUrl: 'https://lucidev-assets.s3.us-east-2.amazonaws.com/angel.jpeg',
+        isActive:true
       }
     }
   }

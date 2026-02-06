@@ -1,10 +1,11 @@
 export interface Post {
-    Id: number; 
-    Title: string;
-    Content: string;
-    AuthorName: string;
-    AuthorId: number;
-    CreatedAt: Date;
-    UpdatedAt?: Date; 
-    AuthorImageUrl: string;
+    id: number; 
+    title: string;
+    content: string;
+    authorName: string;
+    authorId: number;
+    createdAt: Date;
+    updatedAt?: Date; 
+    authorImageUrl: string;
+    isActive: boolean;
   }

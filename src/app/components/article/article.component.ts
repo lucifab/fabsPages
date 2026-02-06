@@ -12,6 +12,7 @@ export class ArticleComponent implements OnChanges {
   @ViewChildren('articleBody') articleBodies!: QueryList<ElementRef>;
 
   constructor(private renderer: Renderer2) {
+    console.log(this.post?.title);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -27,7 +28,7 @@ export class ArticleComponent implements OnChanges {
   updateHtml(): void {
     if (this.articleBodies)
       this.articleBodies.forEach((articleBody) => {
-        this.renderer.setProperty(articleBody.nativeElement, 'innerHTML', this.post.Content);
+        this.renderer.setProperty(articleBody.nativeElement, 'innerHTML', this.post.content);
       });
 
   }

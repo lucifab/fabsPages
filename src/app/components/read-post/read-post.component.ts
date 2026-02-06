@@ -22,7 +22,7 @@ export class ReadPostComponent {
     this.apiService.getData().subscribe(
       (response) => {
         this.posts = response;
-        console.log(this.posts[0].Title);
+        console.log(this.posts[0].title);
       },
       (error) => {
         console.error('Error fetching data:', error);

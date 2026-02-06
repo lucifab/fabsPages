@@ -8,30 +8,22 @@ import { Post } from '../models/post.model';
 })
 export class WebPostsAPIService {
 
-  private apiUrl='http://127.0.0.1:3000/api'
+  private apiUrl='http://localhost:5087'
 
   constructor(private http: HttpClient) { }
 
-  getData():Observable<any>{
-    var body = {
-      "Action":"getPosts"
-    }
+  getData():Observable<Array<Post>>{
+
     const headers = new HttpHeaders({
-      'Content-Type':'application/json',
-      'Access-Control-Allow-Origin':'*'
+      'Content-Type':'application/json'
     });
-    return this.http.post<any>(`${this.apiUrl}`,JSON.stringify(body),{headers});
+    return this.http.get<Array<Post>>(`${this.apiUrl}/posts`,{headers:headers});
   }
 
   pushData(post:Post):Observable<any>{
-    var body = {
-      "Action":"pushPost",
-      "Post":post
-    }
     const headers = new HttpHeaders({
-      'Content-Type':'application/json',
-      'Access-Control-Allow-Origin':'*'
+      'Content-Type':'application/json'
     });
-    return this.http.post<any>(`${this.apiUrl}`,JSON.stringify(body),{headers});
+    return this.http.post<any>(`${this.apiUrl}/posts`,{headers:headers});
   }
 }
