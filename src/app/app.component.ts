@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from "tsparticles-engine";
+import { CognitoService } from './services/cognito-service.service';
 
 
 @Component({
@@ -8,8 +9,13 @@ import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from 
     styleUrls: ['./app.component.scss'],
     standalone: false
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  private readonly cognitoService = inject(CognitoService);
+
   title = 'fabsPage';
   selectedContent = 'blog';
 
+  ngOnInit(): void {
+    this.cognitoService.checkAuth();
+  }
 }

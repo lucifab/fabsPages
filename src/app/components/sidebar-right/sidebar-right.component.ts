@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper, faPenNib, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
+import { CognitoService } from 'src/app/services/cognito-service.service';
 
 @Component({
     selector: 'app-sidebar-right',
@@ -8,6 +9,8 @@ import { faCode, faPalette, faPerson, faPeopleGroup, faNewspaper, faPenNib } fro
     standalone: false
 })
 export class SidebarRightComponent {
+
+  public readonly cognitoService = inject(CognitoService);
 
   @Output() contentSelection = new EventEmitter<string>() ;
 
@@ -18,9 +21,19 @@ export class SidebarRightComponent {
   faPeopleGroup = faPeopleGroup;
   faNewspaper = faNewspaper;
   faPenNib = faPenNib; 
+  faLock = faLock;
+  faUnlock = faUnlock;
 
   emitContentSelection(contentType: string){
     this.contentSelection.emit(contentType);
+  }
+
+  login(): void {
+    this.cognitoService.login();
+  }
+
+  logout(): void {
+    this.cognitoService.logout();
   }
 
 }

@@ -1,0 +1,78 @@
+<section class="login-page">
+  @if (cognitoService.isAuthenticated) {
+    @if (cognitoService.userProfile$ | async; as user) {
+      <header class="profile-header">
+        @if (user.picture) {
+          <img class="avatar" [src]="user.picture" alt="" />
+        } @else {
+          <div class="avatar avatar-placeholder">
+            {{ (user.email || user['cognito:username'] || user.sub).charAt(0).toUpperCase() }}
+          </div>
+        }
+
+        <div class="profile-identity">
+          <h1>{{ user.name || user.email || user['cognito:username'] || 'Authenticated user' }}</h1>
+          <p>{{ user.sub }}</p>
+        </div>
+
+        <div class="token-actions">
+          <button type="button" class="copy-token-button" (click)="copyAccessToken()">
+            Copy access token
+          </button>
+          @if (tokenCopyMessage) {
+            <span>{{ tokenCopyMessage }}</span>
+          }
+        </div>
+      </header>
+
+      <dl class="profile-details">
+        @if (user.email) {
+          <div>
+            <dt>Email</dt>
+            <dd>{{ user.email }}</dd>
+          </div>
+        }
+
+        @if (user.email_verified !== undefined) {
+          <div>
+            <dt>Email verified</dt>
+            <dd>{{ user.email_verified ? 'Yes' : 'No' }}</dd>
+          </div>
+        }
+
+        @if (user.phone_number) {
+          <div>
+            <dt>Phone</dt>
+            <dd>{{ user.phone_number }}</dd>
+          </div>
+        }
+
+        @if (user.phone_number_verified !== undefined) {
+          <div>
+            <dt>Phone verified</dt>
+            <dd>{{ user.phone_number_verified ? 'Yes' : 'No' }}</dd>
+          </div>
+        }
+
+        @if (user['cognito:username']) {
+          <div>
+            <dt>Cognito username</dt>
+            <dd>{{ user['cognito:username'] }}</dd>
+          </div>
+        }
+
+        @if (user.auth_time) {
+          <div>
+            <dt>Authenticated at</dt>
+            <dd>{{ user.auth_time * 1000 | date:'medium' }}</dd>
+          </div>
+        }
+      </dl>
+    }
+  } @else {
+    <div class="empty-state">
+      <h1>Not signed in</h1>
+      <p>Use the login button in the sidebar to sign in with Cognito.</p>
+    </div>
+  }
+</section>
