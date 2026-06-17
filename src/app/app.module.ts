@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SpeechBubbleComponent } from './components/work/workpage/speech-bubble/speech-bubble.component';
 
-
+import {AuthModule} from 'angular-auth-oidc-client';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,16 @@ import { SpeechBubbleComponent } from './components/work/workpage/speech-bubble/
   ],
   imports: [
     HttpClientModule,
+    AuthModule.forRoot({
+      config: {
+        authority: environment.auth.authority,
+        redirectUrl: environment.auth.redirectUrl,
+        postLogoutRedirectUri: environment.auth.postLogoutRedirectUri,
+        clientId: environment.auth.clientId,
+        scope: environment.auth.scope,
+        responseType: environment.auth.responseType
+      },
+    }),
     BrowserModule,
     AppRoutingModule,
     NgParticlesModule,

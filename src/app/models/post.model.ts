@@ -3,7 +3,8 @@ export interface Post {
     title: string;
     content: string;
     authorName: string;
-    authorId: number;
+    authorId?: number;
+    cognitoId?: string;
     createdAt: Date;
     updatedAt?: Date; 
     authorImageUrl: string;

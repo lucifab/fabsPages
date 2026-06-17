@@ -33,6 +33,7 @@
     "@tsparticles/angular": "^3.0.0",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/slim": "^3.5.0",
+    "angular-auth-oidc-client": "^21.0.2",
     "bootstrap": "^5.3.3",
     "core-js": "^3.30.2",
     "font-awesome": "^4.7.0",
