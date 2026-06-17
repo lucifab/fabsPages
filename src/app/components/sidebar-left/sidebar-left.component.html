@@ -1,7 +1,12 @@
 <ng-particles id="particles" [options]="particlesOptions" [particlesInit]="particlesInit"></ng-particles>
 
 <div class="sidebarContainer">
-    <img id="iconImage" src="assets/images/icont2.png">
+    @if(cognitoService.userProfile$ | async; as user){
+        <img id="iconImage" [src]="user.picture">
+    }
+    @else {
+        <img id="iconImage" src="assets/images/icont2.png">
+    }
     <h1>A splash of color won't hurt</h1>
     <h2>Fabiane Arruda</h2>
     <div class="linkContainer">
