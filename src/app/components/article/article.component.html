@@ -2,7 +2,7 @@
     <div id="header">
         <img [src]="post.authorImageUrl">
         <h1>{{post.title}}</h1>
-        <div id="articleDate">{{post.createdAt | date:"EEEE YYYY-MM-dd hh:mm:ss.SSS OOOO"}}</div>
+        <div id="articleDate">{{post.createdAt | date:"EEEE yyyy-MM-dd hh:mm:ss.SSS OOOO"}}</div>
         <div id="articleDate">{{post.authorName}}</div>
     </div>
     <div class="articleBody" #articleBody></div>

@@ -1,13 +1,27 @@
 <div class="blogContainer">
-  @if (posts === undefined || posts.length===0) {
-    <div>
+  @if (!hasLoadedInitialPage && isLoading) {
+    <div class="loading-state">
       <mat-progress-spinner class="loader" mode="indeterminate"></mat-progress-spinner>
     </div>
   }
 
-  @for (post of posts; track post) {
+  @if (hasLoadedInitialPage && posts.length === 0) {
+    <div class="empty-state">No posts found.</div>
+  }
+
+  @for (post of posts; track post.id) {
     <div>
       <app-article [post]="post"></app-article>
     </div>
   }
+
+  <div #loadMoreSentinel class="load-more-sentinel">
+    @if (isLoading && hasLoadedInitialPage) {
+      <mat-progress-spinner class="loader" [diameter]="28" mode="indeterminate"></mat-progress-spinner>
+    }
+
+    @if (hasLoadedInitialPage && !hasMorePosts && posts.length > 0) {
+      <span>All posts loaded</span>
+    }
+  </div>
 </div>

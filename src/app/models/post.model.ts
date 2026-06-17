@@ -9,3 +9,13 @@ export interface Post {
     authorImageUrl: string;
     isActive: boolean;
   }
+
+export interface PostRequest {
+    title: string;
+    content: string;
+  }
+
+export interface PostsPageRequest {
+    pageSize?: number;
+    cursorId?: number;
+  }

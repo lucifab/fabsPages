@@ -1,8 +1,24 @@
 
 .blogContainer {
     align-content: center;
-    .loader{
-        left:45%;
-        margin-top:35%;
-    }
+}
+
+.loading-state {
+    display: grid;
+    min-height: 50vh;
+    place-items: center;
+}
+
+.load-more-sentinel {
+    align-items: center;
+    color: #667085;
+    display: flex;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.empty-state {
+    color: #667085;
+    padding: 3rem 0;
+    text-align: center;
 }
