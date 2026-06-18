@@ -7,6 +7,7 @@
     flex-direction: column;
     #bottom-information{
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap:30px;
         #info-messager{
@@ -15,6 +16,15 @@
             display: flex;
             gap:10px;
             align-items: center;
+        }
+        #autosave-status{
+            border-radius: 9999px;
+            color: #667085;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 0 25px 0 25px;
+            white-space: nowrap;
         }
         #button-container{
             display: flex;
@@ -43,4 +53,21 @@
     background-color: palegreen;
     color:green;
     animation: glow-success 1.5s ease-out 3s;
+}
+
+.autosave-saving{
+    background-color: #fff0c2;
+    color:#7a4a00 !important;
+}
+
+.autosave-saved{
+    background-color: palegreen;
+    color:green !important;
+    animation: glow-success 1.5s ease-out 3s;
+}
+
+.autosave-error{
+    background-color: #ff6767;
+    color:#a61010 !important;
+    animation: glow-error 1.5s ease-out 3s;
 }

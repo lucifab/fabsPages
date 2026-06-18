@@ -12,5 +12,8 @@ export const environment = {
   },
   blog: {
     pageSize: 10
+  },
+  writePost: {
+    autoSaveDelayMs: 3000
   }
 };

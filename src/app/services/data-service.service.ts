@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Post, PostRequest, PostsPageRequest } from '../models/post.model';
+import { Post, PostsPageRequest, UpsertPostRequest, UpsertPostResponse } from '../models/post.model';
 import { environment } from '../../environments/environment';
 import { CognitoService } from './cognito-service.service';
 
@@ -37,16 +37,30 @@ export class WebPostsAPIService {
     return this.http.get<Post[]>(`${this.apiUrl}/posts`, { headers, params });
   }
 
-  pushData(post: PostRequest): Observable<any> {
+  upsertDraftPost(post: UpsertPostRequest): Observable<UpsertPostResponse> {
     return this.cognitoService.getAccessToken().pipe(
       switchMap((accessToken) => {
-        const headers = new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`
-        });
+        const headers = this.buildAuthorizedHeaders(accessToken);
 
-        return this.http.post<any>(`${this.apiUrl}/posts`, post, { headers });
+        return this.http.put<UpsertPostResponse>(`${this.apiUrl}/posts/draft`, post, { headers });
       })
     );
+  }
+
+  publishPost(post: UpsertPostRequest): Observable<UpsertPostResponse> {
+    return this.cognitoService.getAccessToken().pipe(
+      switchMap((accessToken) => {
+        const headers = this.buildAuthorizedHeaders(accessToken);
+
+        return this.http.post<UpsertPostResponse>(`${this.apiUrl}/posts/publish`, post, { headers });
+      })
+    );
+  }
+
+  private buildAuthorizedHeaders(accessToken: string): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`
+    });
   }
 }

@@ -7,13 +7,19 @@ export interface Post {
     cognitoId?: string;
     createdAt: Date;
     updatedAt?: Date; 
+    publishedAt?: Date;
     authorImageUrl: string;
     isActive: boolean;
   }
 
-export interface PostRequest {
+export interface UpsertPostRequest {
+    id?: number;
     title: string;
     content: string;
+  }
+
+export interface UpsertPostResponse {
+    id: number;
   }
 
 export interface PostsPageRequest {

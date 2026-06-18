@@ -1,6 +1,6 @@
 <div id="flexbox">
-      <input [(ngModel)]="postNew.title" type="text" placeholder="Title goes here" class="tox tox-tinymce">
-      <editor [(ngModel)]="postNew.content" apiKey="no-api-key" [disabled]="false" id="editor" [init]="{ plugins: 'code help image lists link table wordcount',
+      <input [(ngModel)]="postNew.title" (ngModelChange)="queueAutoSave()" type="text" placeholder="Title goes here" class="tox tox-tinymce">
+      <editor [(ngModel)]="postNew.content" (ngModelChange)="queueAutoSave()" apiKey="no-api-key" [disabled]="false" id="editor" [init]="{ plugins: 'code help image lists link table wordcount',
                       base_url: '/tinymce',
                       suffix: '.min'
                     }" [inline]="false"
@@ -27,12 +27,28 @@
 
       {{infoMessage}}
     </div>
+    <div id="autosave-status" [class.autosave-saving]="autoSaveStatus === 'saving'" [class.autosave-saved]="autoSaveStatus === 'saved'" [class.autosave-error]="autoSaveStatus === 'error'">
+      @if (autoSaveStatus === 'saving') {
+        <mat-progress-spinner [diameter]="16" mode="indeterminate"></mat-progress-spinner>
+      }
+      @if (autoSaveStatus === 'saved') {
+        <fa-icon [icon]="faSquareCheck"></fa-icon>
+      }
+      @if (autoSaveStatus === 'error') {
+        <fa-icon [icon]="faSquareXmark"></fa-icon>
+      }
+      {{ autoSaveMessage }}
+    </div>
     <div id="button-container">
+      <button mat-flat-button (click)="createNewPost()" [disabled]="postId === undefined">
+        <fa-icon [icon]="faPlus"></fa-icon>
+        New
+      </button>
       <button mat-flat-button (click)="previewPost()">
         <fa-icon [icon]="faEye"></fa-icon>
         Preview
       </button>
-      <button mat-flat-button (click)="pushPostData()">
+      <button mat-flat-button (click)="publishPost()" [disabled]="autoSaveStatus === 'saving' || isPublishing">
         <fa-icon [icon]="faUpload"></fa-icon>
         Publish
       </button>
