@@ -5,8 +5,8 @@ export const environment = {
     authority: 'https://cognito-idp.us-east-2.amazonaws.com/us-east-2_qb8HQhsb6',
     cognitoDomain: 'https://us-east-2qb8hqhsb6.auth.us-east-2.amazoncognito.com',
     clientId: '5glgtb2l2lqfvh2d7hsn3re6a0',
-    redirectUrl: 'https://your-production-domain.com/auth/callback',
-    postLogoutRedirectUri: 'https://your-production-domain.com/auth/logout',
+    redirectUrl: 'https://lucifab.dev/auth/callback',
+    postLogoutRedirectUri: 'https://lucifab.dev/auth/logout',
     scope: 'openid email phone profile',
     responseType: 'code'
   },

@@ -3,14 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 18.20.4  # Specify the Node.js version
-        - nvm use 18.20.4
+        - nvm install 20.20.0  # Specify the Node.js version
+        - nvm use 20.20.0
         - npm install
     build:
       commands:
-        - npm run build  # This will run the Angular build
+        - npm run build:prod  # This will run the Angular build
   artifacts:
-    baseDirectory: dist/fabs-page
+    baseDirectory: dist/fabs-page/browser
     files:
       - '**/*'
   cache:
