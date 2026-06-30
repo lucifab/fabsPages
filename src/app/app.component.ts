@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from "tsparticles-engine";
 import { CognitoService } from './services/cognito-service.service';
 
@@ -11,11 +12,16 @@ import { CognitoService } from './services/cognito-service.service';
 })
 export class AppComponent implements OnInit {
   private readonly cognitoService = inject(CognitoService);
+  private readonly router = inject(Router);
 
   title = 'fabsPage';
   selectedContent = 'blog';
 
   ngOnInit(): void {
-    this.cognitoService.checkAuth();
+    if (this.router.url.startsWith('/auth/callback')) {
+      return;
+    }
+
+    this.cognitoService.checkAuth().subscribe();
   }
 }

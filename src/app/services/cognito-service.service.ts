@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CognitoUserData } from '../models/cognito-user-data.model';
 
@@ -36,10 +36,12 @@ export class CognitoService {
     });
   }
 
-  checkAuth(): void {
-    this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated }) => {
-      this.isAuthenticated = isAuthenticated;
-    });
+  checkAuth() {
+    return this.oidcSecurityService.checkAuth().pipe(
+      tap(({ isAuthenticated }) => {
+        this.isAuthenticated = isAuthenticated;
+      })
+    );
   }
 
   getAccessToken() {

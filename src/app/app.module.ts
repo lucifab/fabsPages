@@ -26,6 +26,7 @@ import { SpeechBubbleComponent } from './components/work/workpage/speech-bubble/
 
 import {AuthModule} from 'angular-auth-oidc-client';
 import { environment } from 'src/environments/environment';
+import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from 'src/environments/environment';
     WorkItemComponent,
     WorkpageComponent,
     SpeechBubbleComponent,
-    SortByEndDatePipe
+    SortByEndDatePipe,
+    AuthCallbackComponent
   ],
   imports: [
     HttpClientModule,
